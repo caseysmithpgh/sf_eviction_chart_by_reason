@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Chart Reason - SF Eviction Notices</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Reason Type', 'Number of Eviciton Notices'],
+        ['Condo', 13],
+        ['Rehabilitation', 55],
+        ['Denial of Access', 216],
+        ['Illegal Use', 653],
+        ['Unapproved Subtenant', 557],
+        ['Demo', 1013],
+        ['Buy Out', 1077],
+        ['Capital Improvement', 1059],
+        ['Roommate Issue', 1091],
+        ['Late Payment', 1379],
+        ['Ellis Act Withdrawal', 1848],
+        ['Non-payment', 2114],
+        ['Nuisance', 5378],
+        ['Breaches', 7050],
+        ['Owner Move In', 8520],
+        //['[Undetermined', 14041]
+            
+        ]);
+
+        var options = {
+          title: 'San Francisco Eviction Notices by Type',
+        
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+        
+chart.draw(data, options);
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
